@@ -656,3 +656,27 @@ gridlayoutManager.setSpanSizeLookUp(new GridLayoutManager.SpanSizeLookUp(){
   或者 【编译打包、安装可以合并】
   	> ./gradlew clean
   	> ./gradlew installDebug
+---
+
+## 10.21[周五]
+- 使用Android系统源码的方式更改Seekbar的样式
+  > <?xml version="1.0" encoding="utf-8"?>  
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">  
+        <!-- 背景图 -->  
+        <item android:id="@+android:id/background" android:drawable="@drawable/bg" />  
+        <!--全部能量图  -->  
+        <item android:id="@+android:id/SecondaryProgress"  
+            android:drawable="@drawable/bg" />  
+        <!-- 进和能量图 -->  
+        <item android:id="@+android:id/progress" android:drawable="@drawable/bg2" />  
+    </layer-list>
+
+ > <?xml version="1.0" encoding="UTF-8"?>  
+    <selector xmlns:android="http://schemas.android.com/apk/res/android">  
+        <!-- 按下状态 -->  
+        <item android:state_pressed="true" android:drawable="@drawable/bg3" />  
+      
+        <!-- 普通无焦点状态 -->  
+        <item android:state_focused="false" android:state_pressed="false"  
+            android:drawable="@drawable/bg4" />  
+    </selector>   
